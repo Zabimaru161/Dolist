@@ -3,18 +3,18 @@ import { toast } from "react-hot-toast";
 
 import { v4 as uuidv4 } from "uuid";
 
-const CreateTask = ({ setTasks }) => {
+const CreateTask = ({ tasks, setTasks }) => {
   const [task, setTask] = useState({
     id: "",
     name: "",
     status: "todo", // can also be inprogress or closed
   });
-  console.log(task);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task.name?.length < 3)
       return toast.error("A tasks must have more than 3 digits");
-    if (task.name?.length > 50)
+    if (task.name?.length > 100)
       return toast.error("A tasks must have more than 3 digits");
     setTasks((prev) => {
       const list = [...prev, task];

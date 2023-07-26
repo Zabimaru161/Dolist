@@ -7,8 +7,9 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+
   useEffect(() => {
-    setTasks(JSON.parse(localStorage.getItem("tasks")));
+    setTasks(JSON.parse(localStorage?.getItem("tasks")));
   }, []);
   return (
     <DndProvider backend={HTML5Backend}>
