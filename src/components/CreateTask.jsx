@@ -12,9 +12,9 @@ const CreateTask = ({ setTasks }) => {
   console.log(task);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (task.name.length < 3)
+    if (task.name?.length < 3)
       return toast.error("A tasks must have more than 3 digits");
-    if (task.name.length > 50)
+    if (task.name?.length > 50)
       return toast.error("A tasks must have more than 3 digits");
     setTasks((prev) => {
       const list = [...prev, task];
