@@ -9,7 +9,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   console.log("tasks");
   useEffect(() => {
-    setTasks(JSON.parse(localStorage?.getItem("tasks")));
+    setTasks(JSON.parse(localStorage.getItem("tasks")) || []);
   }, []);
   return (
     <DndProvider backend={HTML5Backend}>
